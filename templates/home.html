@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title> Excel to Word </title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %} ">
+        <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+        <meta id="csrf" csrf="{{ csrf_token }}" content="">
+    </head>
+    <body>
+        <!-- BODY -->
+        <div class="flex-box full-screen">
+            <div class="container" id="container">
+                <!-- INPUT SECTION -->
+                <div class="fake-btn flex-box box-fit flex-center" id="chosing-file">
+                    <button class="input-file" id="fake-btn">Choose file</button>
+                    <input class="hidden" type="file" name="" id="file-input" value="">
+                </div>
+                <!-- EXPORTER SECTION -->
+                <div class="box-fit hidden" id="file-exporter">
+                    <div class="title-box" id="title-box">
+                        <span class="title" id="file-name">This is the name of the fuc*ing file.xlsx</span>
+                    </div>
+                    <div class="flex-box flex-end relative" id="button-group" style="z-index: 2">
+                        <div class="flex-child button-container relative">
+                            <button type="button" name="button" id="drop-button">Choose sheet</button>
+                            <div class="drop-box" id="drop-box" style="height: 0px;">
+                                <div class="items" id="drop-items">
+                                    <!-- <div class="item">
+                                        <span>Sheet1</span>
+                                    </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-child button-container">
+                            <button type="button" name="button" id="submit">Export</button>
+                        </div>
+                    </div>
+
+                    <div class="table-view relative" style="z-index: 1">
+                        <table class="table">
+                            <thead class="thead" id="table-head">
+
+                            </thead>
+                            <tbody class="tbody" id="table-body">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="floating-context-menu" id="ctx-menu">
+            <div class="menu">
+                <div class="item" id="QRvalue">
+                    <span>Set this field as QR value</span>
+                </div>
+                <div class="item" id="QRlabel">
+                    <span>Set this field as QR label</span>
+                </div>
+                <div class="item" id="ctx-menu-close">
+                    <span>Close menu</span>
+                </div>
+            </div>
+            <!-- <div class="fake-bg box-fit" id="ctx-fake-bg"></div> -->
+        </div>
+
+        <div class="floating-context-menu full-screen flex-box flex-center export-confirm" id="confirm-box">
+            <div class="content-box">
+                <div class="header-content">
+                    <div class="content">
+                        <span>QR Label Field: <span id="label-field"></span> </span>
+                    </div>
+
+                    <div class="content">
+                        <span>QR Value Field: <span id="value-field"></span> </span>
+                    </div>
+                </div>
+
+                <div class="select-aspect">
+
+                    <div class="aspect" x="3" y="4" inches="2">
+                        <div class="icon-container">
+                            <div class="icon">
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="icon-label">
+                            <span>12 QR per page ( 3 x 4 )</span>
+                        </div>
+                    </div>
+
+                    <div class="aspect" x="2" y="3" inches="3">
+                        <div class="icon-container">
+                            <div class="icon">
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="icon-label">
+                            <span>6 QR per page ( 2 x 3 )</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="index" state="false">
+                    <div class="icon-container">
+                        <div class="icon">
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="icon-label">
+                        <span>Put index under QR Code</span>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="">Export name:</label>
+                    <input type="text" id="export-file-name" placeholder="Leave blank to use auto-generated name" name="" value="">
+                </div>
+                <div class="button">
+                    <button type="button" id="submit-data">Generate File</button>
+                </div>
+            </div>
+            <div class="fake-bg box-fit" id="fake-bg-content-box"></div>
+        </div>
+
+
+
+        <!-- SCRIPT -->
+            <!-- jquery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+            <!-- xlsx cdn -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+        <!-- /SCRIPT -->
+
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

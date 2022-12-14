@@ -1,0 +1,206 @@
+.input-file{
+    border: 1px dashed #777;
+    display: block;
+    padding: 8px 12px;
+    background: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s ease-in;
+    color: #777;
+}
+
+.input-file:hover{
+    border: 1px dashed #000;
+    box-shadow: 1px 1px 20px 1px #ccc;
+    color: #000;
+}
+
+.title-box{
+    font-size: 24px;
+    display: block;
+    text-align: center;
+    width: max-content;
+    padding: 12px;
+    border-bottom: 2px solid #000;
+    margin: auto;
+}
+
+
+.button-container{
+    margin: 12px 0px 12px 12px;
+}
+
+.button-container button{
+    display: block;
+    padding: 8px 12px;
+    outline: none;
+    border: 1px solid #000;
+    background: #fff;
+    cursor: pointer;
+}
+
+.floating-context-menu{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: none !important;
+}
+
+.floating-context-menu .menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background: #fff;
+    box-shadow: 1px 1px 20px 1px #ccc;
+    border: 1px solid #ccc;
+}
+
+.floating-context-menu .menu .item{
+    padding: 8px 12px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    background: #fff;
+    transition: 0.25s ease-in-out;
+}
+.floating-context-menu .menu .item:hover{
+    background: #ccc;
+}
+
+.floating-context-menu .content-box {
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    position: relative;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.floating-context-menu .content-box .header-content .content{
+    display: block;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.floating-context-menu .content-box .header-content .content span span{
+    font-weight: bold;
+}
+
+#confirm-box .content-box{
+    height: unset !important;
+}
+
+.select-aspect{
+    margin-top: 12px;
+}
+
+.aspect, .index {
+    padding: 0 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.index{
+    margin-top: 24px;
+}
+
+.aspect:hover, .index:hover{
+    background: #fafafa;
+    border-bottom: 1px solid #ccc;
+}
+
+.aspect .icon-container, .index .icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aspect .icon, .index .icon{
+    width: 20px;
+    height: 20px;
+    border: 2px solid #777;
+    border-radius: 50%;
+}
+
+.aspect .icon .dot, .index .icon .dot{
+    margin: 3px;
+    display: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #777;
+}
+
+
+.aspect .icon-label, .index .icon-label{
+    display: flex;
+    align-items: center;
+}
+
+.aspect .icon-label span, .index .icon-label span {
+    display: block;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.floating-context-menu .input-field{
+    display: block;
+    width: 100%;
+    padding: 12px;
+}
+
+.floating-context-menu .input-field label{
+    width: 100%;
+    display: block;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.floating-context-menu .input-field input{
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 12px;
+    border: 1px solid #000;
+
+}
+
+.floating-context-menu .button{
+    padding: 12px;
+}
+
+#submit-data{
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #000;
+    outline: none;
+    background: #fff;
+    font-size: 16px;
+    transition: ease-in 0.25s;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 12px;
+}
+
+#submit-data:hover{
+    background: #777;
+    color: #fff;
+    border-color: transparent;
+}
+
+.floating-context-menu .fake-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background:  rgba(0, 0, 0, 0.5);
+}

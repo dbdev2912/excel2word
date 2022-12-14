@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.app{
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fafafa;
+}
+
+
+textarea{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+      resize: vertical;
+ }
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+}
+
+
+
+*::-webkit-scrollbar{
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: #777;
+}
+
+*::-webkit-scrollbar-thumb:hover{
+    background-color: #333;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: #fff;
+}
+
+.hidden{
+    display: none;
+}
+
+.relative{
+    position: relative;
+}
+
+.flex-box{
+    display: flex;
+}
+
+.flex-box .flex-child{
+    display: block;
+}
+
+
+.box-fit{
+    width: 100%;
+    height: 100%;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-end{
+    justify-content: flex-end;
+}
+
+.full-screen{
+    width: 100vw;
+    height: 100vh;
+    background: #fafafa;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 2em auto;
+    background: #fff;
+    box-shadow: 1px 1px 20px 1px #ccc;
+    padding: 12px;
+}
+
+.drop-box{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 2;
+    overflow: hidden;
+    height: 200px;
+    /* border: 1px solid #ccc; */
+    box-shadow: 1px 1px 20px 1px #ccc;
+    transition: ease-in-out 0.25s;
+    background: #fff;
+}
+
+.drop-box .items{
+    height: 200px;
+    width: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.drop-box .items .item{
+    padding: 8px 12px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    transition: 0.25s ease-in;
+    cursor: pointer;
+}
+
+.drop-box .items .item:hover{
+    background: #ddd;
+}
+
+
+.table-view{
+    width: 100%;
+    border: 2px solid #000;
+    overflow: auto;
+}
+
+.table-view table{
+    min-width: 100%;
+}
+
+.table-view thead{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+
+.table-view thead th{
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.table-view tbody tr td{
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
