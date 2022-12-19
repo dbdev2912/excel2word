@@ -5,7 +5,7 @@ const submitData = {
     aspect: {
         x: 3,
         y: 4,
-        inches: 2,
+        inches: 2.0,
     },
     with_index: false,
     export_name: "",
@@ -69,7 +69,8 @@ $('#submit-data').click( function(){
             csrfmiddlewaretoken: csrf
         },
         success: function(res){
-            console.log(res)
+            const { path } = res;
+            window.open(`/file/${path}`, '_blank').focus();
         }
     })
 })
@@ -125,7 +126,7 @@ function showContextMenu(element, offsetX, offsetY){
     $('#QRlabel').off('click');
     $('#QRlabel').click( function(){
         ctxClose()
-        submitData.setLabelField($(element).text())
+        submitData.setLabelField($(element).text())        
     });
 
     $('#QRvalue').off('click');
@@ -143,7 +144,7 @@ $('.aspect').click(function(){
 
     let x = parseInt($(this).attr("x"));
     let y = parseInt($(this).attr("y"));
-    let inches = parseInt($(this).attr("inches"));
+    let inches = $(this).attr("inches");
     submitData.setAspect(
         x, y, inches
     )

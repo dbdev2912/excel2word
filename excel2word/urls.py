@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import mainpage, generating_file
+from main.views import mainpage, generating_file, download_and_remove_file
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mainpage),
+    path('file/<str:file>/', download_and_remove_file),
 
-    path('api/generate', generating_file)
+    path('api/generate', generating_file),
 ]
