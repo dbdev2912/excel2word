@@ -204,3 +204,37 @@
     z-index: 1;
     background:  rgba(0, 0, 0, 0.5);
 }
+
+table th[label="true"]{
+    background-color: #cecece;
+}
+
+table th[value="true"]{
+    background-color: #cecfff;
+}
+
+
+.loading-box{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+.loading-box img{
+    animation-name: rotating-forever;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: block;
+    width: 80%;
+    margin:auto;
+}
+
+@keyframes rotating-forever {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

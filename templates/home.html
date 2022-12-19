@@ -124,11 +124,22 @@
                 <div class="button">
                     <button type="button" id="submit-data">Generate File</button>
                 </div>
+                <a href="#" class="hidden" target="_blank" href="" id="download-link"></a>
             </div>
             <div class="fake-bg box-fit" id="fake-bg-content-box"></div>
         </div>
 
-
+        <div class="floating-context-menu full-screen flex-box flex-center export-confirm" id="loading-screen">
+            <div class="content-box">
+                <div class="loading-box flex-box flex-center">
+                    <img src="{% static 'img/loading-circle.png' %}" alt="">
+                </div>
+                <div class="flex-box flex-center">
+                    <span style="display:block; font-size: 18px">Loading bitch</span>
+                </div>
+            </div>
+            <div class="fake-bg box-fit" id="fake-bg-loading-screen"></div>
+        </div>
 
         <!-- SCRIPT -->
             <!-- jquery -->

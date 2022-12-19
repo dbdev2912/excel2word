@@ -50,7 +50,15 @@ $('#submit').click(function(){
     });
 });
 
+function loadingScreen() {
+    $('#fake-bg-content-box').click();
+    $('#loading-screen').css({
+        display: "flex"
+    });
+}
+
 $('#submit-data').click( function(){
+    loadingScreen()
     let exportName = $('#export-file-name').val();
     if(exportName){
         if( exportName.slice( exportName.length - 5) !==".docx" ){
@@ -70,7 +78,12 @@ $('#submit-data').click( function(){
         },
         success: function(res){
             const { path } = res;
-            window.open(`/file/${path}`, '_blank').focus();
+            window.open(`/file/${path}`, '_blank');
+            $('#loading-screen').hide();
+        },
+        error: function (jqXHR, exception) {
+            console.log(jqXHR);
+            // error handling logic here..
         }
     })
 })
@@ -126,13 +139,19 @@ function showContextMenu(element, offsetX, offsetY){
     $('#QRlabel').off('click');
     $('#QRlabel').click( function(){
         ctxClose()
-        submitData.setLabelField($(element).text())        
+        submitData.setLabelField($(element).text())
+        $(element).parent().find('th[label="true"]').attr("label", "none")
+        $(element).attr("label", "true")
+        $(element).attr("value", "none")
     });
 
     $('#QRvalue').off('click');
     $('#QRvalue').click( function(){
         ctxClose()
         submitData.setValueField($(element).text())
+        $(element).parent().find('th[value="true"]').attr("value", "none")
+        $(element).attr("value", "true")
+        $(element).attr("label", "none")
     });
 }
 
